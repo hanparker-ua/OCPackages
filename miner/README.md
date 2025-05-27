@@ -49,3 +49,51 @@ Errors are logged to `/home/mining_error.log`
 
 - [Geolyzer API Reference](docs/geolyzer-api.md)
 - [Terminal Command Examples](docs/terminal-command-example.md)
+
+## 🧪 Testing
+
+### Prerequisites
+
+Install Lua and the Busted testing framework:
+
+**Ubuntu/Debian:**
+```bash
+sudo apt-get update
+sudo apt-get install lua5.3 luarocks
+```
+
+**macOS:**
+```bash
+brew install lua luarocks
+```
+
+**Windows:**
+- Download Lua from [lua.org](https://www.lua.org/download.html)
+- Install LuaRocks from [luarocks.org](https://luarocks.org/releases/)
+
+### Install Test Dependencies
+
+```bash
+luarocks install busted
+luarocks install luacov  # For code coverage (optional)
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+busted
+
+# Run tests with verbose output
+busted --verbose
+
+# Run specific test file
+busted spec/miner_spec.lua
+
+# Run tests with coverage report
+busted --coverage
+```
+
+### Test Structure
+
+Tests are located in the `spec/` directory and follow the naming convention `*_spec.lua`.
